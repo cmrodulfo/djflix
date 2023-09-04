@@ -6,5 +6,5 @@
 #  Carlos Marin
 #  Maria Cecilia Urrutia
 #  Viviana Rivas
-#  Nicolas Rosic
+#  Nicolás Rosic
 #  Brian Alan Atue
