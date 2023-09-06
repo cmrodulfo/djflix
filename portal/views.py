@@ -8,4 +8,7 @@ def index(request):
 
 
 def peliculas(request):
-    return HttpResponse("<h1> Todas las peliculas</h1>")
+    return HttpResponse("<h1> Todas las peliculas desde el </h1>")
+
+def contacto(request):
+    return HttpResponse("<h1> Contacto</h1>")
