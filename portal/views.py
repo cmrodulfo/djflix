@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseServerError
-#from django import reverse
+from django.urls import reverse
 #from django.shortcuts import render
 
 
@@ -9,8 +9,17 @@ def index(request):
     return respuesta
 
 
-def peliculas(request, singlemovie):
-    return HttpResponse("<h1> Todas las peliculas desde el </h1> {singlemovie}"  )
+def peliculas(request):
+    return HttpResponse("<h1> Todas las peliculas </h1>"  )
+
+
+def archivo(request, year):
+    if year == 2028:
+        url = reverse("index")
+        return HttpResponseRedirect(url)
+    
+    return HttpResponse(f'<h1>Peliculas de archivo del anio: {year}</h1>')
+
 
 def contacto(request):
     return HttpResponse("<h1> Contacto</h1>")
