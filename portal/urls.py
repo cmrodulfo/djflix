@@ -23,6 +23,6 @@ urlpatterns = [
     path('', views.index, name = "index"),
     path('portal/', views.index, name = "index"),
     path('peliculas/', views.peliculas, name = "Peliculas"),
-    path('peliculas/<str:singlemovie>', views.peliculas, name = "Peliculas"),
+    path('peliculas/<int:singlemovie>', views.peliculas, name = "Peliculas"),
     path('contacto/', views.contacto, name = "Contacto")
 ]

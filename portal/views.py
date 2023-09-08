@@ -10,7 +10,7 @@ def index(request):
 
 
 def peliculas(request, singlemovie):
-    return HttpResponse("<h1> Todas las peliculas desde el </h1> {singlemovie}" )
+    return HttpResponse("<h1> Todas las peliculas desde el </h1> {singlemovie}"  )
 
 def contacto(request):
     return HttpResponse("<h1> Contacto</h1>")
