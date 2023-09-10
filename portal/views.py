@@ -33,3 +33,6 @@ def archivo(request, year):
 
 def contacto(request):
     return HttpResponse("<h1> Contacto</h1>")
+
+def base_pelicula(request):
+    return HttpResponse(f'<h1> Template base para vista de pelicula</h1>')

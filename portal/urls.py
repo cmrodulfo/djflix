@@ -24,5 +24,6 @@ urlpatterns = [
     path('portal/', views.index, name = "index"),
     path('peliculas/', views.peliculas, name = "Peliculas"),
     path('archivo/<int:year>', views.archivo, name = "Archivo "),
-    path('contacto/', views.contacto, name = "Contacto")
+    path('contacto/', views.contacto, name = "Contacto"),
+    path('base_pelicula/', views.base_pelicula, name="Base pelicula single")
 ]
