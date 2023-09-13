@@ -17,7 +17,7 @@ def index(request):
 
 def peliculas(request):
     #return HttpResponse("<h1> Todas las peliculas </h1>"  )
-    return render(request, "peliculas.html")
+    return HttpResponse("<h1> Peliculas </h1>")
 
 
 def archivo(request, year):
