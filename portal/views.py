@@ -28,5 +28,5 @@ def archivo(request, year):
 
 
 def contacto(request):
-    return HttpResponse("<h1> Contacto</h1>")
+    return render(request, "contact_form.html")
 

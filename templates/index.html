@@ -3,9 +3,11 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ 
   <title>DJ Flix Streaming</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   {% load static %}
+
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <script src="{% static 'js/main.js' %}"></script>
  
@@ -22,21 +24,23 @@
   <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
 </head>
+
 <body>
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
-        <h1><a href="#hero"><span>DJ</span>Flix</a></h1>
+        <h1><a href="{% url "index" %}"><span>DJ</span>Flix</a></h1>
+        
       </div>
 
       <nav id="navbar" class="navbar">
           <li><a class="nav-link scrollto active" href="{% url "index" %}">Inicio</a></li>
           <li><a class="nav-link scrollto" href="#services">Login</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Register</a></li>
-          <li><a class="nav-link scrollto" href="peliculas">Peliculas</a></li>
+          <li><a class="nav-link scrollto" href="{% url "Peliculas" %}">Peliculas</a></li>
           <li><a class="nav-link scrollto" href="#team">Precios</a></li>
-          <li><a class="nav-link scrollto" href="contacto">Contacto</a></li>
+          <li><a class="nav-link scrollto" href="{% url "Contacto" %}">Contacto</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -532,33 +536,7 @@
           <div class="row">
 
 
-            <!-- Start  contact -->
-            <div class="col-md-6">
-              <div class="form contact-form">
-                {% csrf_token %}
-                <form action="" method="post" role="form" class="php-email-form">
-                  <div class="form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                  </div>
-                  <div class="form-group mt-3">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                  </div>
-                  <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                  </div>
-                  <div class="form-group mt-3">
-                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                  </div>
-                  <div class="my-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                  </div>
-                  <div class="text-center"><button type="submit">Send Message</button></div>
-                </form>
-              </div>
-            </div>
-            <!-- End Left contact -->
+           
           </div>
         </div>
       </div>
