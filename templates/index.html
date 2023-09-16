@@ -3,6 +3,7 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ 
   <title>DJ Flix Streaming</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   {% load static %}
@@ -34,9 +35,9 @@
           <li><a class="nav-link scrollto active" href="{% url "index" %}">Inicio</a></li>
           <li><a class="nav-link scrollto" href="#services">Login</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Register</a></li>
-          <li><a class="nav-link scrollto" href="peliculas">Peliculas</a></li>
+          <li><a class="nav-link scrollto" href="{% url "Peliculas" %}">Peliculas</a></li>
           <li><a class="nav-link scrollto" href="#team">Precios</a></li>
-          <li><a class="nav-link scrollto" href="contacto">Contacto</a></li>
+          <li><a class="nav-link scrollto" href="{% url "Contacto" %}">Contacto</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>

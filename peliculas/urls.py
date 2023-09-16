@@ -23,5 +23,4 @@ urlpatterns = [
     
     path('peliculas/', views.peliculas, name = "Peliculas"),
     path('pelicula_single/', views.pelicula_single, name = "Base pelicula single"),
-    
 ]
