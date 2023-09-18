@@ -16,18 +16,6 @@ def index(request):
    return render(request, "index.html", {"ahora":datetime.now()})
 
 
-def archivo(request, year):
-    if year == 2028:
-        url = reverse("index")
-        return HttpResponseRedirect(url)
-    elif year == 2027:
-        return HttpResponseServerError("<h1> Error de servidor </h1>")
-    
-    return HttpResponse(f'<h1>Peliculas de archivo del anio: {year}</h1>')
-
-    return response
-
-
 def contacto(request):
     return render(request, "contact_form.html")
 

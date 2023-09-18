@@ -22,5 +22,6 @@ from . import views
 urlpatterns = [
     
     path('peliculas/', views.peliculas, name = "Peliculas"),
-    path('detalle_pelicula/<str:nombre_pelicula>', views.detalle_pelicula, name = "Detalle pelicula")
+    path('detalle_pelicula/<str:nombre_pelicula>', views.detalle_pelicula, name = "Detalle pelicula"),
+    path('archivo/<int:year>', views.archivo, name = "Archivo "),
 ]

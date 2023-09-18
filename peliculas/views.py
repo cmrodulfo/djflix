@@ -11,6 +11,16 @@ def peliculas(request):
     #Contexto: el o  los datos que le damos a la plantilla para que se cargue
     context = {
         'nombre_pelicula': 'Gladiador',
+        'fecha': datetime.now(),
+        'es_suscriptor': True,
+        'listado_peliculas': {
+            
+            'Gladiador',
+            'The Matrix',
+            'Kimi no na wa',
+            'Oppenhaimer',
+            'The muggen train'
+        }
     }
     
     return render(request, "peliculas.html", context)
@@ -18,4 +28,15 @@ def peliculas(request):
 
 def detalle_pelicula(request, nombre_pelicula):
     return HttpResponse(
-        f'<h1 style="color: purple"> Estas por ver: {nombre_pelicula} </h1>')
+        f'<h1 style="color: purple"> Detalle de pelicula seleccionada, Estas por ver: {nombre_pelicula} </h1>')
+    
+def archivo(request, year):
+    if year == 2028:
+        url = reverse("index")
+        return HttpResponseRedirect(url)
+    elif year == 2027:
+        return HttpResponseServerError("<h1> Error de servidor </h1>")
+    
+    return HttpResponse(f'<h1>Peliculas de archivo del anio: {year}</h1>')
+
+    return response

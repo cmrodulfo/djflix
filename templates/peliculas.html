@@ -31,18 +31,44 @@
         </header>
 
     <main>
+       <!-- ======= Header base ======= -->
+ <div class="header-bg page-area">
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="slider-content text-center">
+          <div class="header-bottom">
+            <div class="layer2">
+              <h1 class="title2">DJFLIX </h1>
+            </div>
+            <div class="layer3">
+              <h2 class="title3">Listado de peliculas</h2>
+              <p style="color: white"> Hoy es {{fecha}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- End Header base -->
 
-        <h1 style="color:blueviolet;">Listado peliculas 2023</h1>
-        
+{% if es_suscriptor %}
+<h2> Tu rol es: suscriptor </h2>
+{% else %}
+<h2> Tu rol es: administrador </h2>
+{% endif %}
+
         <ul>
+          {% for nombre_pelicula in listado_peliculas%}
             <li>
-                <p> Nombre pelicula: </p>
-                <p> Anio: </p>
-                <p> Descripcion: </p>
+                <p> {{nombre_pelicula}} </p>  
             </li>
+            {% empty %}
+            <p> No hay peliculas dsponibles </p>
+          {% endfor %}
         </ul>
         
-    
+     
     </main>
     {% include 'footer.html' %}
     
