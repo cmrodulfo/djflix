@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.shortcuts import render
 #from django.template import loader
 from datetime import datetime
+from django.template import Template
 
 
 # Create your views here.
@@ -29,4 +30,6 @@ def archivo(request, year):
 
 def contacto(request):
     return render(request, "contact_form.html")
+
+
 

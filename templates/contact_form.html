@@ -1,3 +1,4 @@
+
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <script src="{% static 'js/main.js' %}"></script>
@@ -17,24 +18,7 @@
 <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
 <header id="header" class="fixed-top d-flex align-items-center">
-  <div class="container d-flex justify-content-between">
-
-    <div class="logo">
-      <h1><a href="#hero"><span>DJ</span>Flix</a></h1>
-    </div>
-
-    <nav id="navbar" class="navbar">
-        <li><a class="nav-link scrollto active" href="{% url "index" %}">Inicio</a></li>
-        <li><a class="nav-link scrollto" href="#services">Login</a></li>
-        <li><a class="nav-link scrollto" href="#portfolio">Register</a></li>
-        <li><a class="nav-link scrollto" href="{% url "Peliculas" %}">Peliculas</a></li>
-        <li><a class="nav-link scrollto" href="#team">Precios</a></li>
-        <li><a class="nav-link scrollto" href="{% url "Contacto" %}">Contacto</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav>
-
-  </div>
+  {% include 'header-nav.html' %}
 </header>
 
  <!-- ======= Header base ======= -->
@@ -56,6 +40,9 @@
     </div>
   </div>
 </div><!-- End Header base -->
+
+
+
 <!-- ======= Contact Section ======= -->
 <div id="contact" class="contact-area">
   <div class="contact-inner area-padding">
@@ -130,48 +117,8 @@
   </div>
 </div><!-- End Contact Section -->
 
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="footer-content">
-              <div class="footer-head">
-                
 
-                
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4">
-            <div class="footer-content">
-              <div class="footer-head">
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-area-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="copyright text-center">
-              <p>
-                &copy; CAC 4.0 <strong>DJflix</strong>. Comision 23654
-              </p>
-            </div>
-            <div class="credits">
-              Usamos Boostrap, Python, Django</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
+{% include 'footer.html' %}
 
 
 <!-- Vendor JS Files -->
