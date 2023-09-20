@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ 
+  <title>Listado de Peliculas</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  {% load static %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <script src="{% static 'js/main.js' %}"></script>
+ 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <!-- Vendor JS Files -->
+  <link href="{% static 'vendor/animate.css/animate.min.css' %} " rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+</head>
+<body>
+        <header id="header" class="fixed-top d-flex align-items-center">
+          {% include 'header-nav.html' %}
+        </header>
+
+    <main>
+       <!-- ======= Header base ======= -->
+ <div class="header-bg page-area">
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="slider-content text-center">
+          <div class="header-bottom">
+            <div class="layer2">
+              <h1 class="title2">DJFLIX </h1>
+            </div>
+            <div class="layer3">
+              <h2 class="title3">Listado de peliculas</h2>
+              <p style="color: white"> Hoy es {{fecha}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- End Header base -->
+
+{% if es_suscriptor %}
+<h2> Tu rol es: suscriptor </h2>
+{% else %}
+<h2> Tu rol es: administrador </h2>
+{% endif %}
+
+        <ul>
+          {% for nombre_pelicula in listado_peliculas%}
+            <li>
+                <p> {{nombre_pelicula}} </p>  
+            </li>
+            {% empty %}
+            <p> No hay peliculas dsponibles </p>
+          {% endfor %}
+        </ul>
+        
+     
+    </main>
+    {% include 'footer.html' %}
+    
+</body>
+</html>

@@ -7,4 +7,4 @@
 #  Maria Cecilia Urrutia
 #  Viviana Rivas
 #  Nicolás Rosic
-#  Brian Alan Atue
+#  Inés Quinteros Seeber

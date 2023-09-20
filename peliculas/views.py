@@ -2,14 +2,41 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseServerEr
 from django.urls import reverse
 from django.shortcuts import render
 from datetime import datetime
-
+from django.template import Template
 
 # Create your views here.
 
 def peliculas(request):
     #return HttpResponse("<h1> Todas las peliculas </h1>" )
-    return render(request, "base_peliculas.html", {"hoy":datetime.today()})
+    #Contexto: el o  los datos que le damos a la plantilla para que se cargue
+    context = {
+        'nombre_pelicula': 'Gladiador',
+        'fecha': datetime.now(),
+        'es_suscriptor': True,
+        'listado_peliculas': {
+            
+            'Gladiador',
+            'The Matrix',
+            'Kimi no na wa',
+            'Oppenhaimer',
+            'The muggen train'
+        }
+    }
+    
+    return render(request, "peliculas.html", context)
 
 
-def pelicula_single(request):
-    return HttpResponse(f'<h1 style="color: purple"> Template base para vista de pelicula individual</h1>')
+def detalle_pelicula(request, nombre_pelicula):
+    return HttpResponse(
+        f'<h1 style="color: purple"> Detalle de pelicula seleccionada, Estas por ver: {nombre_pelicula} </h1>')
+    
+def archivo(request, year):
+    if year == 2028:
+        url = reverse("index")
+        return HttpResponseRedirect(url)
+    elif year == 2027:
+        return HttpResponseServerError("<h1> Error de servidor </h1>")
+    
+    return HttpResponse(f'<h1>Peliculas de archivo del anio: {year}</h1>')
+
+    return response
