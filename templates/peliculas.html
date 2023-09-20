@@ -61,12 +61,16 @@
         <ul>
           {% for nombre_pelicula in listado_peliculas%}
             <li>
-                <p> {{nombre_pelicula}} </p>  
+                <p> {{nombre_pelicula | lower}} </p>  
+                <p> {{fecha}} </p>
+               
             </li>
             {% empty %}
             <p> No hay peliculas dsponibles </p>
           {% endfor %}
         </ul>
+
+
         
      
     </main>
