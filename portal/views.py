@@ -18,6 +18,14 @@ def index(request):
 
 def contacto(request):
     return render(request, "contact_form.html")
+ 
+ 
+def base(request):
+    return render(request, "base.html")
+
+
+def precios(request):
+    return render(request, "precios.html")
 
 
 
