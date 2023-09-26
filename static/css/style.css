@@ -2566,3 +2566,12 @@ span.email-notes {
     padding: 0;
   }
 }
+
+/* Zoom imagen peliculas */
+    
+  
+.pelis-zoom:hover{
+
+  transform: scale(1.05);    
+
+}

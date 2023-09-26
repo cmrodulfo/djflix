@@ -1,5 +1,6 @@
-
 {% extends "base.html" %}
+{% load static %}
+
 <main>
 
   {% block content%}
@@ -43,7 +44,7 @@
             <div class="single-icon">
               <i class="bi bi-geo-alt"></i>
               <p>
-                Ubicacion: Buenos Aires, Argentina<br>
+                Ubicación: Buenos Aires, Argentina<br>
               </p>
             </div>
           </div>
@@ -52,18 +53,20 @@
 
 
 <!-- START GALERIA DE PELICULAS DISPONIBLES POR CATEGORIA-->
-
-        <ul>
-          {% for nombre_pelicula in listado_peliculas%}
-            <li>
-                <p> {{nombre_pelicula | lower}} </p>  
-                <p> {{fecha}} </p>
-               
-            </li>
+        <div class="row justify-content-center">
+        {% for key, value in peliculas.items%}
+        <div class="card w-25" style="text-align:center">
+          <div class="card-body">
+            <h5 class="card-title">{{value.nombre| upper}}</h5>
+            <p class="card-text"><img class="pelis-zoom" src="{% get_static_prefix %}img/peliculas/{{value.imagen}}" width="200"></p>
+            <p class="card-text">{{value.categoria}}</p>
+          
+          </div>
+        </div>
             {% empty %}
-            <p> No hay peliculas dsponibles </p>
+            <p> No hay peliculas disponibles </p>
           {% endfor %}
-        </ul>
+        </div>
 
 {%endblock%}
         

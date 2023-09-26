@@ -10,27 +10,21 @@ def peliculas(request):
     #return HttpResponse("<h1> Todas las peliculas </h1>" )
     #Contexto: el o  los datos que le damos a la plantilla para que se cargue
     context = {
-        'nombre_pelicula': '',
-        'listado_peliculas': {
-            
-            'Gladiador',
-            'The Matrix',
-            'Kimi no na wa',
-            'Oppenhaimer',
-            'The muggen train',
-            'Relatos japoneses de lo macabro'
-        },
-        'fecha': datetime.now(),
-        'categoria': '',
-        'listado_categorias' :{
-           
-            'dramones',
-            'accion',
-            'anime'  
+        'peliculas': {
+            '0': {'nombre':'Gladiador',
+                'fecha': datetime.now(),
+                'categoria': 'Aventura/Acción',
+                'imagen': 'gladiador.jpg'
+                },
+            '1': {'nombre': 'The Matrix',
+                'fecha': datetime.now(),
+                'categoria': 'Ciencia Ficción',
+                'imagen': 'matrix.jpg'
+            },
         },
         'es_suscriptor': True, 
-    }
-    
+        }
+
     return render(request, "peliculas.html", context)
 
 
